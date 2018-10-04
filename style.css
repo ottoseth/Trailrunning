@@ -81,6 +81,14 @@ h2 {
 
 }
 
+.written {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.fa {
+  margin: 0 1rem 0 1rem; 
+}
+
 
 .trail-card-body {
   grid-column: 1 / 4;
