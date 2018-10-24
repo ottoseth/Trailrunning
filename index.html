@@ -46,7 +46,11 @@
         <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></span>
         <strong class="text-strava">Strava Route</strong> button to open it in the Strava App.</p>
         <div class="text-center">
-          <img class="img-fluid" src="./img/TrailLocateMapZoom.png" />
+          <!-- <img class="img-fluid" src="./img/TrailLocateMapZoom.png" /> -->
+
+    <!--The div element for the map -->
+    <div id="map"></div>
+
         </div>
       </div>
 
@@ -359,6 +363,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script>
   const cards = document.querySelectorAll('.trail-card');
   const navDifs = document.querySelectorAll('.nav-dif');
@@ -423,6 +428,47 @@
   buttonsDif.forEach(button => button.addEventListener('click', setDifficulty));
   buttonsLoc.forEach(button => button.addEventListener('click', setLocation));
 
+</script>
+
+<script>
+// Initialize and add the map
+function initMap() {
+// The location of Cowboy Trails parking lot
+var cowboy = {lat: 36.121554, lng: -115.433815};
+// The map, centered at Cowboy
+var map = new google.maps.Map(
+  document.getElementById('map'), {zoom: 11, center: cowboy});
+// The marker, positioned at Cowboy
+var markerCowboy = new google.maps.Marker({position: cowboy, title: 'Cowboy Trails', map: map});
+
+markerCowboy.addListener('click', function(e) {
+  console.log(e);
+  navLocs.forEach(function (navcard){
+    if(navcard.id == 'cowboy') {
+      navcard.hidden = false;
+      console.log(navcard.id + "false");
+    } else {
+      navcard.hidden = true;
+      console.log(navcard.id + "true");
+    }
+  });
+  trailLocation = 'cowboy';
+  gtag('event', 'cowboy', {
+    'event_category': 'button press'
+  });
+  displayCards(e);
+});
+
+}
+
+</script>
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXHsjrxAUROW4h5k4uxEep4w8Zv5ly9Ho&callback=initMap">
 </script>
 
 </body>

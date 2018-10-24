@@ -1,4 +1,8 @@
 
+#map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
 
 .container {
   padding: 0;
@@ -86,7 +90,7 @@ h2 {
 }
 
 .fa {
-  margin: 0 1rem 0 1rem; 
+  margin: 0 1rem 0 1rem;
 }
 
 
