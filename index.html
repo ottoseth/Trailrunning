@@ -11,7 +11,8 @@
   gtag('config', 'UA-89572025-2');
 </script>
 
-<script src="track_points.geojson"></script>
+<script src="tracks.geojson"></script>
+<script src="routes.js"></script>
 
   <title>Trail Running Vegas</title>
   <meta charset="UTF-8">
@@ -192,7 +193,7 @@
 
 
           <div class="trail-card" data-difficulty="difficult" data-location="cowboy">
-            <div class="trail-card-body" style="background: linear-gradient(rgba(0,100,200,0.1), rgba(0,0,25,0.7)), url('./img/Boneshaker400x400.jpg') no-repeat center center; background-size: cover; border-radius: .25rem .25rem 0 0;">
+            <div id="boneshaker" class="trail-card-body" style="background: linear-gradient(rgba(0,100,200,0.1), rgba(0,0,25,0.7)), url('./img/Boneshaker400x400.jpg') no-repeat center center; background-size: cover; border-radius: .25rem .25rem 0 0;">
               <div class="trail-card-text">
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Bomb Voyage to Boneshaker</h3>
@@ -376,6 +377,9 @@
   var trailLocation = "allLoc";
   var trailDifficulty = "allDif";
 
+  const boneshaker = document.getElementById('boneshaker');
+  console.log(boneshaker);
+
   function setLocation(e) {
     // buttonsLoc.forEach(function (button){
     //     if(button.id == e.target.id) {
@@ -431,9 +435,6 @@
   buttonsDif.forEach(button => button.addEventListener('click', setDifficulty));
   buttonsLoc.forEach(button => button.addEventListener('click', setLocation));
 
-</script>
-
-<script>
 // Initialize and add the map
 function initMap() {
 // The location of Cowboy Trails parking lot
@@ -444,7 +445,32 @@ var map = new google.maps.Map(
 // The marker, positioned at Cowboy
 var markerCowboy = new google.maps.Marker({position: cowboy, title: 'Cowboy Trails', map: map});
 
-markerCowboy.addListener('click', function(e) {
+
+
+function zoom(map) {
+        var bounds = new google.maps.LatLngBounds();
+        map.data.forEach(function(feature) {
+          processPoints(feature.getGeometry(), bounds.extend, bounds);
+        });
+        map.fitBounds(bounds);
+      }
+
+      function processPoints(geometry, callback, thisArg) {
+              if (geometry instanceof google.maps.LatLng) {
+                callback.call(thisArg, geometry);
+              } else if (geometry instanceof google.maps.Data.Point) {
+                callback.call(thisArg, geometry.get());
+              } else {
+                geometry.getArray().forEach(function(g) {
+                  processPoints(g, callback, thisArg);
+                });
+              }
+            }
+
+boneshaker.addEventListener('click', function(e) {
+
+  map.data.addGeoJson(routes[0]);
+  zoom(map);
   console.log(e);
   navLocs.forEach(function (navcard){
     if(navcard.id == 'cowboy') {
@@ -460,6 +486,7 @@ markerCowboy.addListener('click', function(e) {
     'event_category': 'button press'
   });
   displayCards(e);
+  console.log(tracks.features[0].geometry.coordinates[0][0]);
 });
 
 }
