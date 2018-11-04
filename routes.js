@@ -45,7 +45,7 @@ var routes = {
     key: "totheduck",
     name: "To The Duck",
     difficulty: "Difficult",
-    location: "Red Rock Canyon"
+    location: "Red Rock Canyon "
   }
 
 }
