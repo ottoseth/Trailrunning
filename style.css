@@ -1,6 +1,8 @@
 
 #map {
-        height: 400px;  /* The height is 400 pixels */
+        min-height: 650px;
+        min-width: 650px;
+        height: 100%;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
        }
 
@@ -62,6 +64,19 @@ h2 {
   cursor: pointer;
 }
 
+.modal {
+  padding: 0;
+  margin: auto;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-wide {
+  width: 98%;
+}
+
 .grid-main {
   display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,7 +97,11 @@ h2 {
   overflow: auto;
   resize: horizontal;
   justify-items: center;
+}
 
+.grid-double {
+  grid-column: span 2;
+  border-radius: 0.25rem;
 }
 
 .written {
@@ -187,6 +206,10 @@ h2 {
     height: 400px;
     width: 100%;
     background-image: url("./img/PanoLowFid.png");
+  }
+
+  .modal-wide {
+    max-width: 90%;
   }
 
 
