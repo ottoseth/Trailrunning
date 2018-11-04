@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -101,3 +102,108 @@
 
 
 </body>
+=======
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Trail Running Vegas Google Map</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Las Vegas Trail Running Map">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+
+  <script src="routes.js"></script>
+
+</head>
+<body>
+  <div class="jumbotron-fluid banner">
+    <div class="container-banner">
+      <div class="container display-banner">
+        <h1 id="headOne" onclick="myFunction()">Trail Running Vegas</h1>
+        <h2 class="lead">Sharing the places that I like to run.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron-fluid intro">
+    <div class="container">
+      <p>This is a project I'm working on to collect my favorite running trails around Las Vegas. Right now it's only the west side of town and mostly the Red Rock Canyon area because that's where I run. I will expand the map as I get more trail info. Please send me your favorite trails if you want to help with this project.</p>
+      <p>Use the filter buttons to find something you like then click on the <span class="strava-badge- strava-badge-follow text-strava">
+      <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></span>
+      <strong class="text-strava">Strava Route</strong> button to open it in the Strava App.</p>
+      <div class="text-center"></div>
+      <div id="map"></div>
+    </div>
+  </div>
+      <script>
+
+
+        /* Map functions */
+
+        var map;
+
+        var mapPosition = window.location.search.substring(1);
+        document.getElementById("headOne").innerHTML = routes[mapPosition]["name"];
+        console.log(mapPosition);
+
+
+        function initMap() {
+          // set up the map
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 36.121554, lng: -115.433815},
+            zoom: 7
+          });
+        }
+
+        function loadGeoJsonString() {
+          map.data.addGeoJson(routes[mapPosition]);
+          zoom(map);
+        }
+
+        /**
+         * Update a map's viewport to fit each geometry in a dataset
+         * @param {google.maps.Map} map The map to adjust
+         */
+        function zoom(map) {
+          var bounds = new google.maps.LatLngBounds();
+          map.data.forEach(function(feature) {
+            processPoints(feature.getGeometry(), bounds.extend, bounds);
+          });
+          map.fitBounds(bounds);
+        }
+
+        /**
+         * Process each point in a Geometry, regardless of how deep the points may lie.
+         * @param {google.maps.Data.Geometry} geometry The structure to process
+         * @param {function(google.maps.LatLng)} callback A function to call on each
+         *     LatLng point encountered (e.g. Array.push)
+         * @param {Object} thisArg The value of 'this' as provided to 'callback' (e.g.
+         *     myArray)
+         */
+        function processPoints(geometry, callback, thisArg) {
+          if (geometry instanceof google.maps.LatLng) {
+            callback.call(thisArg, geometry);
+          } else if (geometry instanceof google.maps.Data.Point) {
+            callback.call(thisArg, geometry.get());
+          } else {
+            geometry.getArray().forEach(function(g) {
+              processPoints(g, callback, thisArg);
+            });
+          }
+        }
+
+        function initialize() {
+          initMap();
+          loadGeoJsonString();
+        }
+
+      </script>
+      <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXHsjrxAUROW4h5k4uxEep4w8Zv5ly9Ho&callback=initialize"></script>
+
+
+
+</body>
+>>>>>>> origin/Locate-Map
