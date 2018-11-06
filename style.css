@@ -2,9 +2,15 @@
 #map {
         min-height: 650px;
         /* min-width: 650px; */
-        height: 100%;  /* The height is 400 pixels */
+        height: 100%;
         width: 100%;  /* The width is the width of the web page */
        }
+
+.map {
+  padding: 0px !important;
+
+
+}
 
 .container {
   padding: 0;
@@ -53,6 +59,8 @@ h2 {
   background:url("./img/MapSWVegas.png") no-repeat center top;
   /* background: url("MapSWVegas.png") no-repeat center center 50%; */
   background-size: cover;
+  padding-bottom: 75px;
+
 }
 
 .intro .container {

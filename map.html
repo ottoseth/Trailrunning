@@ -30,6 +30,8 @@
       <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></span>
       <strong class="text-strava">Strava Route</strong> button to open it in the Strava App.</p>
       <div class="text-center"></div>
+    </div>
+    <div class="container map">
       <div id="map"></div>
     </div>
   </div>
@@ -45,6 +47,7 @@
         console.log(mapPosition);
 
 
+
         function initMap() {
           // set up the map
           map = new google.maps.Map(document.getElementById('map'), {
@@ -54,6 +57,7 @@
         }
 
         function loadGeoJsonString() {
+
           map.data.addGeoJson(routes[mapPosition]);
           zoom(map);
         }
