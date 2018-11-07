@@ -19,7 +19,7 @@
     <div class="container-banner">
       <div class="container display-banner">
         <h1 id="headOne" onclick="myFunction()">Trail Running Vegas</h1>
-        <h2 class="lead">Sharing the places that I like to run.</h2>
+
       </div>
     </div>
   </div>
@@ -37,16 +37,23 @@
   </div>
       <script>
 
-
-        /* Map functions */
-
         var map;
 
         var mapPosition = window.location.search.substring(1);
         document.getElementById("headOne").innerHTML = routes[mapPosition]["name"];
         console.log(mapPosition);
 
+        function loadScript(src) {
+          return new Promise(function(resolve, reject) {
+            let script = document.createElement('script');
+            script.src = src;
 
+            script.onload = () => resolve(script);
+            script.onerror = () => reject(new Error("GEOJson load error: " + src));
+
+            document.head.append(script);
+          });
+        }
 
         function initMap() {
           // set up the map
@@ -57,9 +64,9 @@
         }
 
         function loadGeoJsonString() {
-
-          map.data.addGeoJson(routes[mapPosition]);
-          zoom(map);
+            console.log(data);
+            map.data.addGeoJson(data);
+            zoom(map);
         }
 
         /**
@@ -96,7 +103,14 @@
 
         function initialize() {
           initMap();
-          loadGeoJsonString();
+
+          let promise = loadScript(`./mygeodata/${mapPosition}.js`);
+
+          promise.then(
+            script => loadGeoJsonString(),
+            error => alert(`Error: ${error.message}`)
+          );
+
         }
 
       </script>

@@ -98,29 +98,6 @@
 
   </nav>
 
-  <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-wide" role="document">
-    <div class="modal-content" id="modal">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Boneshaker Map</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="map">
-
-      </div>
-      <div class="modal-footer">
-        <button id="boneshaker" type="button" class="btn btn-secondary" onclick="initMap({lat: 36, lng: -115})">Zoom</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
 
 <div class="grid-main">
@@ -154,18 +131,17 @@
           <strong class="text-strava">Strava Route</strong></a>
         </div>
       </div>
-
-
-
           <div class="trail-card" data-difficulty="moderate" data-location="moenkopi">
             <div class="trail-card-body" style="background: linear-gradient(rgba(0,50,255,0.3), rgba(0,0,55,0.7)), url('./img/KFourHalf400.jpg') no-repeat center center; background-size: cover; border-radius: .25rem .25rem 0 0;">
               <div class="trail-card-text">
                 <strong class="mb-2 text-moenkopi">Moenkopi Rd</strong>
                 <h3 class="card-title">Kevin's Four and a Half</h3>
                 <p class="card-text ">Medium difficulty run that gives you a taste of the desert, some rocks, some hills, some technical switchbacks.</p>
+                <a href="map.html?kfourhalf">
+                  <button type="button" class="btn btn-primary" onclick="">Kevin's Map</button>
+                </a>
               </div>
             </div>
-
               <div class="text-warning trail-card-footer-top">Medium</div>
               <div class="text-warning trail-card-footer-top">Medium</div>
               <img class="trail-card-footer-img img-fluid" src="./img/KFourHalf343.png" alt="Map">
@@ -182,12 +158,16 @@
                 <strong class="text-strava">Strava Route</strong></a>
               </div>
           </div>
+
           <div class="trail-card" data-difficulty="difficult" data-location="charleston">
             <div class="trail-card-body" style="background: linear-gradient(rgba(0,100,255,0.1), rgba(0,0,55,0.5)), url('./img/CharlestonA400x400.jpg') no-repeat center center; background-size: cover; border-radius: .25rem .25rem 0 0;">
               <div class="trail-card-text">
                 <strong class="mb-2 text-warning">Mt Charleston</strong>
                 <h3 class="card-title">Charleston Summit Loop</h3>
                 <p class="card-text ">If you’re in Vegas and want a reminder of what mountains feel like go to Mt Charleston. It’s only a 45 minute drive but it feels like a different world.</p>
+                <a href="map.html?charleston">
+                  <button type="button" class="btn btn-primary" onclick="">Charleston Summit Map</button>
+                </a>
               </div>
             </div>
 
@@ -215,14 +195,11 @@
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Bomb Voyage to Boneshaker</h3>
                 <p class="card-text ">Fun, sharp, 90 minute run with great views overlooking Vegas and fast crazy downhill.</p>
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Boneshaker Map</button> -->
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="initMap({lat: 36, lng: -115})">Boneshaker Map</button> -->
                 <a href="map.html?boneshaker">
                   <button type="button" class="btn btn-primary" onclick="">Boneshaker Map</button>
                 </a>
               </div>
             </div>
-
               <div class="text-danger trail-card-footer-top">Difficult</div>
               <div class="text-danger trail-card-footer-top">Difficult</div>
               <img class="trail-card-footer-img img-fluid" src="./img/BombtoBoneStrava343.png" alt="Map">
@@ -281,6 +258,9 @@
                 <strong class="mb-2 text-info">Calico Basin / Red Rock</strong>
                 <h3 class="card-title">Moenkopi Lollipop</h3>
                 <p class="card-text ">Easy 5 miles with great views of everything the area has to offer. My normal Saturday morning sunrise cruise.</p>
+                <a href="map.html?moenkopi">
+                  <button type="button" class="btn btn-primary" onclick="">Moenkopi Lollipop Map</button>
+                </a>
               </div>
             </div>
 
@@ -309,6 +289,9 @@
                 <strong class="mb-2 text-success">Bear's Best</strong>
                 <h3 class="card-title">Bear's 22</h3>
                 <p class="card-text ">Nice 22 mile training run, not too technical, not too steep, easy cruise with views from the west side of Las Vegas.</p>
+                <a href="map.html?bearstwentytwo">
+                  <button type="button" class="btn btn-primary" onclick="">Bear's 22 Map</button>
+                </a>
               </div>
             </div>
 
@@ -367,6 +350,9 @@
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Grateful 8</h3>
                 <p class="card-text ">Grateful for a ruggedly beautiful 8 mile run with good climbing up Bomb Voyage, nice views of Las Vegas from the overlook and an easy cruise down Fossil Canyon. You'll need the map for this one, there are some tricky intersections.</p>
+                <a href="map.html?grateful">
+                  <button type="button" class="btn btn-primary" onclick="">Grateful 8 Map</button>
+                </a>
               </div>
             </div>
 
@@ -409,8 +395,8 @@
   var trailDifficulty = "allDif";
 
   const boneshaker = document.getElementById('boneshaker');
-  const modal = document.getElementById('modal');
-  console.log(modal);
+  // const modal = document.getElementById('modal');
+  // console.log(modal);
 
   function setLocation(e) {
     // buttonsLoc.forEach(function (button){
@@ -533,8 +519,8 @@ function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
 * The key parameter will contain your own API key (which is not needed for this tutorial)
 * The callback parameter executes the initMap() function
 -->
-<script async defer
+<!-- <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXHsjrxAUROW4h5k4uxEep4w8Zv5ly9Ho&callback=initMap">
-</script>
+</script> -->
 
 </body>
