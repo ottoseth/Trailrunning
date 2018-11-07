@@ -149,6 +149,14 @@ h2 {
   max-width: 450px;
 }
 
+.map-card {
+  display: grid;
+	grid-template-columns: 1fr 1fr;
+  min-width: 300px;
+  text-align: center;
+
+}
+
 .trail-card-footer-top {
   align-self: end;
   font-size: 1rem;
