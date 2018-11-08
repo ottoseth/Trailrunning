@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Las Vegas Trail Running Map">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="style.css" rel="stylesheet">
+  <link href="styleTrail.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 
@@ -25,19 +25,24 @@
   </div>
   <div class="jumbotron-fluid intro">
     <div class="container">
-      <p>This is where I'll have some unique info for each one</p>
-      <div class="grid-main">
+
+
             <div class="map-card" data-difficulty="difficult" data-location="redrock">
-              <div class="text-danger trail-card-footer-top">Difficult</div>
-              <div class="text-danger trail-card-footer-top">Difficult</div>
-              <div class="text-muted trail-footer-label"><small>Terrain</small></div>
-              <div class="text-muted trail-footer-label"><small>Vertical</small></div>
-              <div class="trail-card-footer-top">6.8<small class="text-muted"> mi</small></div>
-              <div class="trail-card-footer-top">2,500<small class="text-muted"> ft</small></div>
-              <div class="text-muted trail-footer-label"><small>Distance</small></div>
-              <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
+              <div class="map-card-title" id="title">The Title of the Route</div>
+              <div class="trail-card-footer-top" id="difficultyTerrain">Difficult</div>
+              <div class="trail-card-footer-top" id="difficultyVert">Difficult</div>
+              <div class="map-card-text" id="description">
+                <p>This is where I'll have some unique info for each one Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+              <div class="text-muted"><small>Terrain</small></div>
+              <div class="text-muted"><small>Vertical</small></div>
+              <div class="trail-card-footer-top" id="distance">6.8<small class="text-muted"> mi</small></div>
+              <div class="trail-card-footer-top" id="elev">2,500<small class="text-muted"> ft</small></div>
+              <div class="text-muted"><small>Distance</small></div>
+              <div class="text-muted"><small>Elev Gain</small></div>
+              <div class="map-card-start" id="start">Start Here</div>
             </div>
-      </div>
+
     </div>
     <div class="container map">
       <div id="map"></div>
@@ -48,7 +53,36 @@
         var map;
 
         var mapPosition = window.location.search.substring(1);
+
+        var title = document.getElementById("title");
+        var terrain = document.getElementById("difficultyTerrain");
+        var vertical = document.getElementById("difficultyVert");
+        var start = document.getElementById("start");
+
         document.getElementById("headOne").innerHTML = routes[mapPosition]["name"];
+
+        title.innerHTML = routes[mapPosition]["name"];
+
+        terrain.innerHTML = routes[mapPosition]["terrain"][0];
+        terrain.classList.add(routes[mapPosition]["terrain"][1]);
+
+        vertical.innerHTML = routes[mapPosition]["vertical"][0];
+        vertical.classList.add(routes[mapPosition]["vertical"][1]);
+
+        document.getElementById("distance").innerHTML = `${routes[mapPosition]["distance"]}<small class="text-muted"> mi</small>`;
+        document.getElementById("elev").innerHTML = `${routes[mapPosition]["elev"]}<small class="text-muted"> ft</small>`;
+
+        if (routes[mapPosition]["description"]) {
+          document.getElementById("description").innerHTML = `<p>${routes[mapPosition]["description"]}</p>`;
+        }
+
+        if (routes[mapPosition]["start"]) {
+          start.innerHTML = `Start at ${routes[mapPosition]["start"]}`;
+        } else {
+          start.innerHTML = `Start at ${routes[mapPosition]["location"][0]}`;
+          start.classList.add(routes[mapPosition]["location"][1]);
+        }
+
         console.log(mapPosition);
 
         function loadScript(src) {

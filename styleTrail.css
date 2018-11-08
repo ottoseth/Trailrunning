@@ -1,0 +1,283 @@
+
+#map {
+        min-height: 650px;
+        /* min-width: 650px; */
+        height: 100%;
+        width: 100%;  /* The width is the width of the web page */
+       }
+
+.map {
+  padding: 0px !important;
+
+
+}
+
+.container {
+  padding: 0;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+  background-image: url("./img/PanoLowFidSmall.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+}
+
+.container-banner {
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, 0.8));
+  color: #fff;
+  align-self: flex-end;
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.display-banner{
+  align-self: flex-end;
+  padding: 0 2rem 0 2rem;
+}
+
+.lead {
+  padding-bottom: 1rem;
+
+
+}
+.jumbotron {
+}
+
+.intro {
+  background:url("./img/MapSWVegas.png") no-repeat center top;
+  /* background: url("MapSWVegas.png") no-repeat center center 50%; */
+  background-size: cover;
+  padding: 50px 0 50px 0;
+
+}
+
+.intro .container {
+  background:  linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+.dropdown-menu {
+  cursor: pointer;
+}
+
+.modal {
+  padding: 0;
+  margin: auto;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-wide {
+  width: 98%;
+}
+
+.grid-main {
+  display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	/* border: 10px solid red; */
+  overflow: auto;
+  resize: horizontal;
+  grid-gap: 10px;
+  justify-items: center;
+  margin: 0.5rem auto;
+  justify-content: center;
+
+}
+
+.grid-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+  overflow: auto;
+  resize: horizontal;
+  justify-items: center;
+}
+
+.grid-double {
+  grid-column: span 2;
+  border-radius: 0.25rem;
+}
+
+.written {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.fa {
+  margin: 0 1rem 0 1rem;
+}
+
+
+.trail-card-body {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  color: white;
+  background-size: cover;
+  padding: 6rem 1.25rem 1rem 1.25rem;
+  display: flex;
+
+  }
+
+.trail-card-text {
+  text-align: left;
+  align-self: flex-end;
+}
+
+.trail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 335px 1fr 1fr 1fr 1fr auto;
+  text-align: center;
+  padding: 0;
+  background-color: rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0,0,0,.125);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  border-radius: .25rem;
+  max-width: 450px;
+}
+
+.map-card {
+  display: grid;
+	grid-template-columns: auto;
+  min-width: 300px;
+  text-align: center;
+  overflow: auto;
+  resize: horizontal;
+  column-gap: 12px;
+  justify-items: center;
+  margin: 0.5rem auto;
+  justify-content: center;
+}
+
+.map-card-text {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  align-self: center;
+
+}
+
+.map-card-start {
+  grid-column: 1 / span 2;
+  grid-row: 7;
+  align-self: end;
+}
+
+.map-card-title {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  font-size: 1.5rem;
+}
+
+.trail-card-footer-top {
+  align-self: end;
+  font-size: 1rem;
+}
+
+.trail-card-footer-img {
+  grid-row: 2 / 7;
+  grid-column: 3;
+}
+
+.intro-img {
+  grid-column: 3;
+  grid-row: 1 / span 5;
+}
+
+.trail-card-footer-strava{
+  grid-row: 6;
+  grid-column: 1 / 3;
+}
+
+.intro-strava {
+  grid-row: 5;
+  grid-column: 1 / span 2;
+}
+
+
+.btn-outline-strava {
+  color: #FC4C02;
+  background-color: transparent;
+  background-image: none;
+  border-color: #FC4C02;
+  margin-bottom: 0.375rem;
+}
+
+.btn-outline-strava:hover {
+    color: #FFFFFF;
+    background-color: #CCCCCC;
+    border-color: #FC4C02;
+}
+
+.btn-moenkopi {
+    color: #fff;
+    background-color: #FF8B06;
+    border-color: #FF8B06;
+}
+
+.btn-redrock {
+    color: #fff;
+    background-color: #A92935;
+    border-color: #A92935;
+}
+
+.text-moenkopi {
+  color: #FF8B06;
+}
+
+.text-redrock {
+  color: #A92935;
+}
+
+.text-strava {
+  color: #FC4C02;
+}
+
+
+.strava-badge- { display: inline-block; height: 24px; }
+.strava-badge- img { visibility: hidden; height: 24px; }
+.strava-badge-:hover { background-position: 0 -37px; }
+.strava-badge-follow { height: 24px; width: 24px; background: url(http://badges.strava.com/echelon-sprite-24.png) no-repeat 0 0; }
+
+
+
+
+@media (min-width: 768px) {
+
+  .banner {
+    height: 400px;
+    width: 100%;
+    background-image: url("./img/PanoLowFid.png");
+  }
+
+  .map-card-text {
+    grid-row: 2 / span 2;
+    grid-column: 3;
+  }
+
+  .map-card-start {
+    grid-column: 3;
+    grid-row: 4;
+    align-self: end;
+    font-size: 1.2rem;
+  }
+
+  .map-card-title {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+
+}
