@@ -22,13 +22,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-
-
-
 </head>
 <body>
-
 
       <div class="jumbotron-fluid banner">
         <div class="container-banner">
@@ -49,10 +44,6 @@
         <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></span>
         <strong class="text-strava">Strava Route</strong> button to open it in the Strava App.</p>
         <div class="text-center">
-          <!-- <img class="img-fluid" src="./img/TrailLocateMapZoom.png" /> -->
-
-    <!--The div element for the map -->
-
 
         </div>
       </div>
@@ -107,14 +98,11 @@
             <strong class="mb-2 text-redrock">Red Rock Canyon</strong>
             <h3 class="card-title">To The Duck</h3>
             <p class="card-text ">This includes the hardest climb I know of in Las Vegas, the segment called Giant's Mile, 1500 ft of elevation gain in 1 mile.</p>
-            <!-- <a href="map.html?totheduck">
-              <button type="button" class="btn btn-primary" onclick="">To The Duck Map</button>
-            </a> -->
           </div>
         </div>
         <div class="text-danger trail-card-footer-top">Difficult</div>
         <div class="text-danger trail-card-footer-top">Difficult</div>
-        <a class="trail-card-footer-img" href="map.html?totheduck">
+        <a class="trail-card-footer-img" href="map.html?totheduck" onclick="gtag('event', 'Map', {'event_label': 'Map To The Duck'});">
           <img class="img-fluid" src="./img/ToTheDuck343.png" alt="Map">
         </a>
         <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -124,7 +112,7 @@
         <div class="text-muted trail-footer-label"><small>Distance</small></div>
         <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
         <div class="trail-card-footer-strava">
-          <a href="https://www.strava.com/routes/15040086" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+          <a href="https://www.strava.com/routes/15040086" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava To The Duck'});">
             <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
           <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
           <strong class="text-strava">Strava Route</strong></a>
@@ -137,14 +125,11 @@
                 <strong class="mb-2 text-moenkopi">Moenkopi Rd</strong>
                 <h3 class="card-title">Kevin's Four and a Half</h3>
                 <p class="card-text ">Medium difficulty run that gives you a taste of the desert, some rocks, some hills, some technical switchbacks.</p>
-                <!-- <a href="map.html?kfourhalf">
-                  <button type="button" class="btn btn-primary" onclick="">Kevin's Map</button>
-                </a> -->
               </div>
             </div>
               <div class="text-warning trail-card-footer-top">Medium</div>
               <div class="text-warning trail-card-footer-top">Medium</div>
-              <a class="trail-card-footer-img" href="map.html?kfourhalf">
+              <a class="trail-card-footer-img" href="map.html?kfourhalf" onclick="gtag('event', 'Map', {'event_label': 'Map Kevin 4.5'});">
                 <img class="img-fluid" src="./img/KFourHalf343.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -154,7 +139,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/14513540" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/14513540" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Kevin 4.5'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -167,15 +152,12 @@
                 <strong class="mb-2 text-warning">Mt Charleston</strong>
                 <h3 class="card-title">Charleston Summit Loop</h3>
                 <p class="card-text ">If you’re in Vegas and want a reminder of what mountains feel like go to Mt Charleston. It’s only a 45 minute drive but it feels like a different world.</p>
-                <!-- <a href="map.html?charleston">
-                  <button type="button" class="btn btn-primary" onclick="">Charleston Summit Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-danger trail-card-footer-top">Difficult</div>
               <div class="text-danger trail-card-footer-top">Difficult</div>
-              <a class="trail-card-footer-img" href="map.html?charleston">
+              <a class="trail-card-footer-img" href="map.html?charleston" onclick="gtag('event', 'Map', {'event_label': 'Map Charleston'});">
                 <img class="img-fluid" src="./img/CharlestonA343.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -185,7 +167,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/14474438" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/14474438" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Charleston'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -199,14 +181,11 @@
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Bomb Voyage to Boneshaker</h3>
                 <p class="card-text ">Fun, sharp, 90 minute run with great views overlooking Vegas and fast crazy downhill.</p>
-                <!-- <a href="map.html?boneshaker">
-                  <button type="button" class="btn btn-primary" onclick="">Boneshaker Map</button>
-                </a> -->
               </div>
             </div>
               <div class="text-danger trail-card-footer-top">Difficult</div>
               <div class="text-danger trail-card-footer-top">Difficult</div>
-              <a class="trail-card-footer-img" href="map.html?boneshaker">
+              <a class="trail-card-footer-img" href="map.html?boneshaker" onclick="gtag('event', 'Map', {'event_label': 'Map Boneshaker'});">
                 <img class="img-fluid" src="./img/BombtoBoneStrava343.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -216,7 +195,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12033814" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12033814" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Boneshaker'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -233,15 +212,12 @@
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Cowboy Half Marathon</h3>
                 <p class="card-text ">Half marathon (almost) loop skirting the outside of Cowboy Trails.</p>
-                <!-- <a href="map.html?cowboyhalf">
-                  <button type="button" class="btn btn-primary" onclick="">Cowboy Half Marathon Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-danger trail-card-footer-top">Difficult</div>
               <div class="text-danger trail-card-footer-top">Difficult</div>
-              <a class="trail-card-footer-img" href="map.html?cowboyhalf">
+              <a class="trail-card-footer-img" href="map.html?cowboyhalf" onclick="gtag('event', 'Map', {'event_label': 'Map Cowboy Half'});">
                 <img class="img-fluid" src="./img/CowboyHalfStrava342.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -251,7 +227,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12039376" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12039376" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Cowboy Half'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -266,15 +242,12 @@
                 <strong class="mb-2 text-info">Calico Basin / Red Rock</strong>
                 <h3 class="card-title">Moenkopi Lollipop</h3>
                 <p class="card-text ">Easy 5 miles with great views of everything the area has to offer. My normal Saturday morning sunrise cruise.</p>
-                <!-- <a href="map.html?moenkopi">
-                  <button type="button" class="btn btn-primary" onclick="">Moenkopi Lollipop Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-success trail-card-footer-top">Easy</div>
               <div class="text-success trail-card-footer-top">Easy</div>
-              <a class="trail-card-footer-img" href="map.html?moenkopi">
+              <a class="trail-card-footer-img" href="map.html?moenkopi" onclick="gtag('event', 'Map', {'event_label': 'Map Moenkopi'});">
                 <img class="img-fluid" src="./img/MoenkopiStrava347.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -284,7 +257,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12039460" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12039460" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -299,15 +272,12 @@
                 <strong class="mb-2 text-success">Bear's Best</strong>
                 <h3 class="card-title">Bear's 22</h3>
                 <p class="card-text ">Nice 22 mile training run, not too technical, not too steep, easy cruise with views from the west side of Las Vegas.</p>
-                <!-- <a href="map.html?bearstwentytwo">
-                  <button type="button" class="btn btn-primary" onclick="">Bear's 22 Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-success trail-card-footer-top">Easy</div>
               <div class="text-success trail-card-footer-top">Easy</div>
-              <a class="trail-card-footer-img" href="map.html?bearstwentytwo">
+              <a class="trail-card-footer-img" href="map.html?bearstwentytwo" onclick="gtag('event', 'Map', {'event_label': 'Map Bears 22'});">
                 <img class="img-fluid" src="./img/Bears22Strava349.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -317,7 +287,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12048441" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12048441" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Bears 22'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -332,15 +302,12 @@
                 <strong class="mb-2 text-info">Calico Basin / Red Rock</strong>
                 <h3 class="card-title">Grand Circle from Calico Basin</h3>
                 <p class="card-text ">This is the classic Red Rock route touring everything the area has to offer, with a little adjustment to the starting position.</p>
-                <!-- <a href="map.html?grandcircle">
-                  <button type="button" class="btn btn-primary" onclick="">Grand Circle Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-warning trail-card-footer-top">Medium</div>
               <div class="text-warning trail-card-footer-top">Medium</div>
-              <a class="trail-card-footer-img" href="map.html?grandcircle">
+              <a class="trail-card-footer-img" href="map.html?grandcircle" onclick="gtag('event', 'Map', {'event_label': 'Map Grand Circle'});">
                 <img class="img-fluid" src="./img/GrandCircleStrava349.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -350,7 +317,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12048485" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12048485" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Grand Circle'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -364,15 +331,12 @@
                 <strong class="mb-2 text-danger">Cowboy Trails</strong>
                 <h3 class="card-title">Grateful 8</h3>
                 <p class="card-text ">Grateful for a ruggedly beautiful 8 mile run with good climbing up Bomb Voyage, nice views of Las Vegas from the overlook and an easy cruise down Fossil Canyon. You'll need the map for this one, there are some tricky intersections.</p>
-                <!-- <a href="map.html?grateful">
-                  <button type="button" class="btn btn-primary" onclick="">Grateful 8 Map</button>
-                </a> -->
               </div>
             </div>
 
               <div class="text-warning trail-card-footer-top">Medium</div>
               <div class="text-warning trail-card-footer-top">Medium</div>
-              <a class="trail-card-footer-img" href="map.html?grateful">
+              <a class="trail-card-footer-img" href="map.html?grateful" onclick="gtag('event', 'Map', {'event_label': 'Map Grateful 8'});">
                 <img class="img-fluid" src="./img/Cowboy8Strava344.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
@@ -382,7 +346,7 @@
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12186427" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'BV to Bone', {'event_category': 'Strava'});">
+                <a href="https://www.strava.com/routes/12186427" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Grateful 8'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -411,17 +375,8 @@
   var trailDifficulty = "allDif";
 
   const boneshaker = document.getElementById('boneshaker');
-  // const modal = document.getElementById('modal');
-  // console.log(modal);
 
   function setLocation(e) {
-    // buttonsLoc.forEach(function (button){
-    //     if(button.id == e.target.id) {
-    //       $(button).addClass('active');
-    //     } else {
-    //       $(button).removeClass('active');
-    //     }
-    // });
     navLocs.forEach(function (navcard){
       if(navcard.id == e.target.id) {
         navcard.hidden = false;
@@ -432,20 +387,13 @@
       }
     });
     trailLocation = e.target.id;
-    gtag('event', e.target.id, {
-      'event_category': 'button press'
+    gtag('event', 'Filter Button Location', {
+      'event_label': e.target.id
     });
     displayCards(e);
   };
 
   function setDifficulty(e) {
-    // buttonsDif.forEach(function (button){
-    //     if(button.id == e.target.id) {
-    //       $(button).addClass('active');
-    //     } else {
-    //       $(button).removeClass('active');
-    //     }
-    // });
     navDifs.forEach(function (navcard){
       if(navcard.id == e.target.id) {
         navcard.hidden = false;
@@ -454,8 +402,8 @@
       }
     });
     trailDifficulty = e.target.id;
-    gtag('event', e.target.id, {
-      'event_category': 'button press'
+    gtag('event', 'Filter Button Difficulty', {
+      'event_label': e.target.id
     });
     displayCards(e);
   };
@@ -502,31 +450,6 @@ function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
                 });
               }
             }
-
-
-
-// modal.addEventListener('transitionend', function(e) {
-//
-//   map.data.addGeoJson(routes[0]);
-//   zoom(map);
-//   console.log(e + ' this is the transition end');
-//   navLocs.forEach(function (navcard){
-//     if(navcard.id == 'cowboy') {
-//       navcard.hidden = false;
-//       console.log(navcard);
-//     } else {
-//       navcard.hidden = true;
-//
-//     }
-//   });
-//   trailLocation = 'cowboy';
-//   gtag('event', 'cowboy', {
-//     'event_category': 'button press'
-//   });
-//   displayCards(e);
-//   console.log(tracks.features[0].geometry.coordinates[0][0]);
-// });
-
 }
 
 </script>
