@@ -380,10 +380,8 @@
     navLocs.forEach(function (navcard){
       if(navcard.id == e.target.id) {
         navcard.hidden = false;
-        console.log(navcard.id + "false");
       } else {
         navcard.hidden = true;
-        console.log(navcard.id + "true");
       }
     });
     trailLocation = e.target.id;
@@ -419,8 +417,7 @@
 
 // Initialize and add the map
 function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
-    // The location of Cowboy Trails parking lot
-    // var cowboy = {lat: 36.121554, lng: -115.433815};
+
     // The map, centered at Cowboy
     console.log(dataLatLngLocation);
     var map = new google.maps.Map(document.getElementById('map'), {zoom: 11, center: dataLatLngLocation});
@@ -428,7 +425,6 @@ function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
     var markerCowboy = new google.maps.Marker({position: dataLatLngLocation, title: 'Cowboy Trails', map: map});
     map.data.addGeoJson(routes[0]);
     zoom(map);
-    console.log(map.getBounds());
 
     function zoom(map) {
             var bounds = new google.maps.LatLngBounds();
