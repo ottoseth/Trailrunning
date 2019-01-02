@@ -8,8 +8,26 @@
 
 .map {
   padding: 0px !important;
+}
 
+@keyframes jump-in {
+  0% {
+    opacity: 0;
+    transform: translateY(800px);
+  }
 
+  95% {
+    opacity: 100;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.jump-in {
+  animation: jump-in 0.2s ease;
 }
 
 .container {
@@ -88,6 +106,7 @@ h2 {
 .grid-main {
   display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr 1fr;
 	/* border: 10px solid red; */
   overflow: auto;
   resize: horizontal;
@@ -95,7 +114,6 @@ h2 {
   justify-items: center;
   margin: 0.5rem auto;
   justify-content: center;
-
 }
 
 .grid-intro {
@@ -145,8 +163,16 @@ h2 {
   background-color: rgba(0,0,0,0.05);
   border-top: 1px solid rgba(0,0,0,.125);
   border-bottom: 2px solid rgba(0,0,0,0.1);
-  border-radius: .25rem;
+  border-radius: 1rem;
   max-width: 450px;
+}
+
+.btm-rt-radius {
+  border-radius: 0 0 1rem 0;
+}
+
+.top-radius {
+  border-radius: 1rem 1rem 0 0;
 }
 
 .map-card {
@@ -290,6 +316,10 @@ h2 {
     /* background: url("MapSWVegas.png") no-repeat center center 50%; */
     background-size: cover;
     padding: 3rem 0 3rem 0;
+  }
+
+  .intro .container {
+    border-radius: 1rem;
   }
 
   .banner {
