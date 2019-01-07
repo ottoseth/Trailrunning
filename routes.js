@@ -37,7 +37,7 @@ var routes = {
     start: "<a class='btn btn-outline-google' href='https://goo.gl/maps/xV7ouGFRDHH2'>Red Rock Canyon Visitor Center</a>",
     distance: 11.5,
     elev: 1667,
-    description: "This is the classic Red Rock route touring everything the area has to offer. If you are from out of town and looking to see everything Red Rock Canyon has to offer for a runner this is the place to start."
+    description: "This is the classic Red Rock route. If you are from out of town and looking to see everything Red Rock Canyon has to offer, this is the place to start."
   },
   kfourhalf: {
     name: "Kevin's Four and a Half",
