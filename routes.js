@@ -29,15 +29,15 @@ var routes = {
     elev: 2500,
     description: "This includes the hardest climb I know of in Las Vegas, the segment called Giant's Mile, 1500 ft of elevation gain in 1 mile."
   },
-  grandcircle: {
-    name: "Grand Circle From Calico Basin",
+  thegrandcircle: {
+    name: "The Grand Circle",
     terrain: ["Medium", "text-warning"],
     vertical: ["Medium", "text-warning"],
-    location: ["Calico Basin / Red Rock", "text-info"],
-    start: "<a class='btn btn-outline-google' href='https://goo.gl/maps/eXuZ7WSfZP82'>Calico Basin Trail parking</a>",
-    distance: 14,
-    elev: 1849,
-    description: "This is the classic Red Rock route touring everything the area has to offer, with a little adjustment to the starting position."
+    location: ["Red Rock Canyon", "text-redrock"],
+    start: "<a class='btn btn-outline-google' href='https://goo.gl/maps/xV7ouGFRDHH2'>Red Rock Canyon Visitor Center</a>",
+    distance: 11.5,
+    elev: 1667,
+    description: "This is the classic Red Rock route touring everything the area has to offer. If you are from out of town and looking to see everything Red Rock Canyon has to offer for a runner this is the place to start."
   },
   kfourhalf: {
     name: "Kevin's Four and a Half",

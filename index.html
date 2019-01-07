@@ -206,28 +206,28 @@
 
           </div>
 
-          <div class="trail-card" data-difficulty="moderate" data-location="calico">
-            <div class="trail-card-body top-radius" style="background: linear-gradient(rgba(0,0,250,0.2), rgba(0,0,25,0.7)), url('./img/GrandCircle400x400.jpg') no-repeat center center; background-size: cover;">
+          <div class="trail-card" data-difficulty="moderate" data-location="redrock">
+            <div class="trail-card-body top-radius" style="background: linear-gradient(rgba(0,0,250,0.2), rgba(0,0,25,0.7)), url('./img/GrandCircle400.jpg') no-repeat center center; background-size: cover;">
               <div class="trail-card-text">
-                <strong class="mb-2 text-info">Calico Basin / Red Rock</strong>
-                <h3 class="card-title">Grand Circle from Calico Basin</h3>
-                <p class="card-text ">This is the classic Red Rock route touring everything the area has to offer, with a little adjustment to the starting position.</p>
+                <strong class="mb-2 text-redrock">Red Rock Canyon</strong>
+                <h3 class="card-title">The Grand Circle</h3>
+                <p class="card-text ">This is the classic Red Rock route touring everything the area has to offer. If you are from out of town and looking to see everything Red Rock Canyon has to offer for a runner this is the place to start.</p>
               </div>
             </div>
 
               <div class="text-warning trail-card-footer-top">Medium</div>
               <div class="text-warning trail-card-footer-top">Medium</div>
-              <a class="trail-card-footer-img" href="map.html?grandcircle" onclick="gtag('event', 'Map', {'event_label': 'Map Grand Circle'});">
-                <img class="img-fluid btm-rt-radius" src="./img/GrandCircleStrava349.png" alt="Map">
+              <a class="trail-card-footer-img" href="map.html?thegrandcircle" onclick="gtag('event', 'Map', {'event_label': 'Map Grand Circle'});">
+                <img class="img-fluid btm-rt-radius" src="./img/GrandCircleStravaMap.png" alt="Map">
               </a>
               <div class="text-muted trail-footer-label"><small>Terrain</small></div>
               <div class="text-muted trail-footer-label"><small>Vertical</small></div>
-              <div class="trail-card-footer-top">14<small class="text-muted"> mi</small></div>
-              <div class="trail-card-footer-top">1,849<small class="text-muted"> ft</small></div>
+              <div class="trail-card-footer-top">11.5<small class="text-muted"> mi</small></div>
+              <div class="trail-card-footer-top">1,667<small class="text-muted"> ft</small></div>
               <div class="text-muted trail-footer-label"><small>Distance</small></div>
               <div class="text-muted trail-footer-label"><small>Elev Gain</small></div>
               <div class="trail-card-footer-strava">
-                <a href="https://www.strava.com/routes/12048485" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Grand Circle'});">
+                <a href="https://www.strava.com/routes/16705703" role="button" class="btn btn-outline-strava" target="_blank" onclick="gtag('event', 'Strava', {'event_label': 'Strava Grand Circle'});">
                   <div class="strava-badge- strava-badge-follow text-strava" target="_blank">
                 <img src="http://badges.strava.com/echelon-sprite-24.png" alt="Strava" /></div>
                 <strong class="text-strava">Strava Route</strong></a>
@@ -418,37 +418,37 @@
   buttonsLoc.forEach(button => button.addEventListener('click', setLocation));
 
 // Initialize and add the map
-function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
-
-    // The map, centered at Cowboy
-    console.log(dataLatLngLocation);
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 11, center: dataLatLngLocation});
-    // The marker, positioned at Cowboy
-    var markerCowboy = new google.maps.Marker({position: dataLatLngLocation, title: 'Cowboy Trails', map: map});
-    map.data.addGeoJson(routes[0]);
-    zoom(map);
-
-    function zoom(map) {
-            var bounds = new google.maps.LatLngBounds();
-            map.data.forEach(function(feature) {
-                processPoints(feature.getGeometry(), bounds.extend, bounds);
-            });
-            map.fitBounds(bounds);
-          }
-
-    function processPoints(geometry, callback, thisArg) {
-            // console.log(geometry + '= geometry');
-              if (geometry instanceof google.maps.LatLng) {
-                callback.call(thisArg, geometry);
-              } else if (geometry instanceof google.maps.Data.Point) {
-                callback.call(thisArg, geometry.get());
-              } else {
-                geometry.getArray().forEach(function(g) {
-                  processPoints(g, callback, thisArg);
-                });
-              }
-            }
-}
+// function initMap(dataLatLngLocation = {lat: 36.121554, lng: -115.433815}) {
+//
+//     // The map, centered at Cowboy
+//     console.log(dataLatLngLocation);
+//     var map = new google.maps.Map(document.getElementById('map'), {zoom: 11, center: dataLatLngLocation});
+//     // The marker, positioned at Cowboy
+//     var markerCowboy = new google.maps.Marker({position: dataLatLngLocation, title: 'Cowboy Trails', map: map});
+//     map.data.addGeoJson(routes[0]);
+//     zoom(map);
+//
+//     function zoom(map) {
+//             var bounds = new google.maps.LatLngBounds();
+//             map.data.forEach(function(feature) {
+//                 processPoints(feature.getGeometry(), bounds.extend, bounds);
+//             });
+//             map.fitBounds(bounds);
+//           }
+//
+//     function processPoints(geometry, callback, thisArg) {
+//             // console.log(geometry + '= geometry');
+//               if (geometry instanceof google.maps.LatLng) {
+//                 callback.call(thisArg, geometry);
+//               } else if (geometry instanceof google.maps.Data.Point) {
+//                 callback.call(thisArg, geometry.get());
+//               } else {
+//                 geometry.getArray().forEach(function(g) {
+//                   processPoints(g, callback, thisArg);
+//                 });
+//               }
+//             }
+// }
 
 </script>
 
